@@ -2,6 +2,7 @@ package appium;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,13 +20,14 @@ public class appium_methods {
     }
 
     public  boolean pageExist(AppiumDriver driver, By by) {
-        WebDriverWait wait;
-        wait = new WebDriverWait(driver, 20);
-        wait.until(ExpectedConditions.elementToBeClickable(by));
+
         try {
-            driver.findElement(by);
+            WebDriverWait wait;
+            wait = new WebDriverWait(driver, 10);
+            wait.until(ExpectedConditions.elementToBeClickable(by));
+           // driver.findElement(by);
             return true;
-        } catch (NoSuchElementException ignored) {
+        } catch (TimeoutException ignored) {
             return false;
         }
     }

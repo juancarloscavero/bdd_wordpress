@@ -12,7 +12,7 @@ import cucumber.api.java.en.*;
 public  class Stepdefs {
     private AppiumDriver driver;
 
-   @Before
+    @Before
     public void setUp() throws Exception {
         File classpathRoot = new File(System.getProperty("user.dir"));
         File appDir = new File(classpathRoot, "apps");

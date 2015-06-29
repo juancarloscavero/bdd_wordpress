@@ -24,13 +24,13 @@ public class LoginPage extends appium_methods {
         return pageExist(driver, menu);
     }
 
-    public LoginPage enterCredentials(String user, String pass) {
+    public void enterCredentials(String user, String pass) {
         fill(driver, usernameValid, user);
         fill(driver, passwordValid, pass);
         press(driver, addHost);
         fill(driver, url, "ec2-54-82-18-238.compute-1.amazonaws.com/wordpress");
         press(driver, loginButton);
-        return this;
+
     }
 
 
