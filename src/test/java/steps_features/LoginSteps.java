@@ -9,7 +9,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import cucumber.api.java.*;
 import cucumber.api.java.en.*;
 
-public  class Stepdefs {
+public  class LoginSteps {
     private AppiumDriver driver;
 
     @Before
