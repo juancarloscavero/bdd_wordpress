@@ -1,5 +1,10 @@
 package page_objects;
-import appium.appium_methods;
-public class MainMenu extends appium_methods{
+import appium.AppiumMethods;
+import io.appium.java_client.AppiumDriver;
 
+public class MainMenu extends AppiumMethods{
+
+    public MainMenu(AppiumDriver driver) {
+        super(driver);
+    }
 }

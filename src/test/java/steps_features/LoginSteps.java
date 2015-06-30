@@ -10,27 +10,30 @@ import cucumber.api.java.*;
 import cucumber.api.java.en.*;
 
 public  class LoginSteps {
-    private AppiumDriver driver;
+    private SharedDriver driver;
 
-    @Before
-    public void setUp() throws Exception {
-        File classpathRoot = new File(System.getProperty("user.dir"));
-        File appDir = new File(classpathRoot, "apps");
-        File app = new File(appDir, "Workshop.apk");
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName","emulator-5554");
-        capabilities.setCapability("platformVersion", "5.0");
-        capabilities.setCapability("app", app.getAbsolutePath());
-        driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-    }
-
-    @Given("^I am about to login$")
-    public void I_am_about_to_login() throws Throwable {
-        LoginPage page = new LoginPage(driver);
-        if (!page.pageLoginExist(driver)) {
-            throw new PendingException("Error, no estoy en la pagina correcta");
+        public LoginSteps(SharedDriver driver){
+            this.driver = driver;
         }
-    }
+//    @Before
+//    public void setUp() throws Exception {
+//        File classpathRoot = new File(System.getProperty("user.dir"));
+//        File appDir = new File(classpathRoot, "apps");
+//        File app = new File(appDir, "Workshop.apk");
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//        capabilities.setCapability("deviceName","emulator-5554");
+//        capabilities.setCapability("platformVersion", "5.0");
+//        capabilities.setCapability("app", app.getAbsolutePath());
+//        driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+//    }
+
+//    @Given("^I am about to login$")
+//    public void I_am_about_to_login() throws Throwable {
+//        LoginPage page = new LoginPage(driver);
+//        if (!page.pageLoginExist(driver)) {
+//            throw new PendingException("Error, no estoy en la pagina correcta");
+//        }
+//    }
 
     @When("^I enter valid credentials$")
     public void I_enter_valid_credentials(){
@@ -46,23 +49,8 @@ public  class LoginSteps {
         }
     }
 
-    @When("^I enter invalid credentials$")
-    public void I_enter_invalid_credentials(){
-        LoginPage page = new LoginPage(driver);
-        page.enterCredentials("wrong", "1234");
-    }
-
-    @Then("^I am in login page$")
-    public void I_am_in_login_page() throws Throwable{
-        LoginPage page = new LoginPage(driver);
-        if (!page.pageLoginExist(driver)) {
-            throw new PendingException("Error, no estoy en la pagina correcta");
-        }
-    }
-
-
-    @After
-    public void tearDown() throws Exception {
-        driver.quit();
-    }
+//    @After
+//    public void tearDown() throws Exception {
+//        driver.quit();
+//    }
 }
