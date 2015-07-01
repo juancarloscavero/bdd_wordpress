@@ -1,6 +1,7 @@
 package page_objects;
 import appium.AppiumMethods;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
 public class LoginPage extends AppiumMethods {
@@ -14,7 +15,7 @@ public class LoginPage extends AppiumMethods {
         super(driver);
     }
 
-    public boolean pageLoginExist(AppiumDriver driver) {
+    public boolean pageLoginExist(AndroidDriver driver) {
         return pageExist(usernameValid);
     }
 

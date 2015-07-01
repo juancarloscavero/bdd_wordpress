@@ -32,14 +32,7 @@ public class SharedDriver extends AndroidDriver {
   }
     public SharedDriver()  {
         super(url, capabilities);
-//        File classpathRoot = new File(System.getProperty("user.dir"));
-//        File appDir = new File(classpathRoot, "apps");
-//        File app = new File(appDir, "Workshop.apk");
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("deviceName", "emulator-5554");
-//        capabilities.setCapability("platformVersion", "5.0");
-//        capabilities.setCapability("app", app.getAbsolutePath());
-//        driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+
     }
     @After
      public void tearDown() throws Exception {

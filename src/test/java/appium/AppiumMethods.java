@@ -9,20 +9,20 @@ public class AppiumMethods {
     protected final AppiumDriver driver;
     protected final WebDriverWait wait;
 
-    public AppiumMethods(AppiumDriver driver){
+    protected AppiumMethods(AppiumDriver driver){
         this.driver = driver;
         wait = new WebDriverWait(driver, 20);
     }
-    public  void press( By by){
+    protected  void press( By by){
         wait.until(ExpectedConditions.elementToBeClickable(by));
         driver.findElement(by).click();
     }
 
-    public  void fill(By by, String text){
+    protected  void fill(By by, String text){
         driver.findElement(by).sendKeys(text);
     }
 
-    public  boolean pageExist(By by) {
+    protected   boolean pageExist(By by) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(by));
             return true;

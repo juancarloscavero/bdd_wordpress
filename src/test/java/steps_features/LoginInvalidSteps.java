@@ -16,17 +16,6 @@ public class LoginInvalidSteps {
     public LoginInvalidSteps(SharedDriver driver){
         this.driver = driver;
     }
-//        @Before
-//        public void setUp() throws Exception {
-//            File classpathRoot = new File(System.getProperty("user.dir"));
-//            File appDir = new File(classpathRoot, "apps");
-//            File app = new File(appDir, "Workshop.apk");
-//            DesiredCapabilities capabilities = new DesiredCapabilities();
-//            capabilities.setCapability("deviceName","emulator-5554");
-//            capabilities.setCapability("platformVersion", "5.0");
-//            capabilities.setCapability("app", app.getAbsolutePath());
-//            driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-//        }
 
         @Given("^I am about to login$")
         public void I_am_about_to_login() throws Throwable {
@@ -49,11 +38,5 @@ public class LoginInvalidSteps {
                 throw new PendingException("Error, no estoy en la pagina correcta");
             }
         }
-
-
-//        @After
-//        public void tearDown() throws Exception {
-//            driver.quit();
-//        }
     }
 
