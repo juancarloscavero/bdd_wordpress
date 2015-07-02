@@ -16,10 +16,10 @@ public  class LoginValidSteps {
         page.enterCredentials("calabash", "password");
     }
 
-    @Then("^I am in main menu$")
+    @Then("^I am on main menu$")
     public void I_am_in_main_menu() throws Throwable{
         LoginPage page = new LoginPage(driver);
-        if (!page.pageMenuExist(driver)) {
+        if (!page.pageMenuExist()) {
             throw new PendingException("Error, no estoy en la pagina correcta");
         }
     }
