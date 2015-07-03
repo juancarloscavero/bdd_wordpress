@@ -8,7 +8,7 @@ Feature: Post
 
   @valid
   Scenario: delete post
-    Given I am in post page
+    Given I am on post page
     When I press button delete
     Then Post deleted
 
@@ -22,6 +22,6 @@ Feature: Post
 
   @valid
   Scenario: delete post
-    Given I am in post page
+    Given I am on post page
     When I press button delete
     Then Post deleted
