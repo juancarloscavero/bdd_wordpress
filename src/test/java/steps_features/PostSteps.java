@@ -35,7 +35,7 @@ public class PostSteps {
     public void I_fill_the_fields(){
         MainMenu page = new MainMenu(driver);
         page.fillPost("Hola", "Caracola");
-        page.testPost("Hola","Caracola");
+        page.testPost("Hola", "Caracola");
     }
 
     @And("^I fill fields with special characters$")
@@ -46,6 +46,23 @@ public class PostSteps {
     }
     @Then("^I see my post$")
     public void I_see_my_post(){
+    }
+
+    @Given("^I am in post page$")
+    public void I_am_in_post_page(){
+        LoginValidSteps login = new LoginValidSteps(driver);
+        login.I_enter_valid_credentials();
+        MainMenu page = new MainMenu(driver);
+    }
+    @When("^I press button delete$")
+    public void I_press_button_delete(){
+        MainMenu page = new MainMenu(driver);
+        page.deletePost();
+    }
+
+    @Then("^Post deleted$")
+    public void Post_deleted(){
+
     }
 
 }
