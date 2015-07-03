@@ -11,7 +11,7 @@ Feature: Post
     Given I am in post page
     When I press button delete
     Then Post deleted
-    
+
   @invalid
   Scenario: add a invalid post
     Given I am logged

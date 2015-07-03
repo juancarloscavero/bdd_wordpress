@@ -62,7 +62,6 @@ public class PostSteps {
 
     @Then("^Post deleted$")
     public void Post_deleted(){
-
     }
 
 }

@@ -56,14 +56,7 @@ public class MainMenu extends AppiumMethods{
     public void postDeleted(String expectedTitle){
         press(seePost);
         press(editPost);
-        String title =driver.findElement(titleField).getText();
-//        try{
-//            assertEquals(title, expectedTitle);
-//
-//        }catch (AssertionError error){
-//            throw new PendingException("Error, don't match the words");
-//
-//        }
+//        String title =driver.findElement(titleField).getText();
     }
     public boolean pageMenuExist() {
         By menu = By.id("org.wordpress.android:id/menu_new_post");
